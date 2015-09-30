@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        
+     <meta charset="utf-8">
+<title>ES6 FEATURES</title>
+        
+        <link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+        <link rel="stylesheet" href="css/styles/googlecode.css">
+       
+		<script src="lib/js/html5shiv.js"></script>
+       
+    </head>
+
+    
+    
+	<body onload="draginit()">
+        
+        <div class="reveal">
+            <div class="slides">
+        
+               
+                <img class="noselect" src="bilder/DHBW-Logo.svg"  width="150" height="90" alt="DHBW-Logo" style="position:absolute; right:0px; bottom:0px">
+
+                <img class="noselect" src="bilder/ec6-logo.png"  width="200" height="100" style="position:absolute; left:0px;      top:0px">       
+                <div class="noselect" style= "font-size:12pt;position:absolute;left:0px;bottom:10px">   
+                    <strong>Maria Dramali, Stand September 2015</strong>
+                </div>               
+                
+<section>
+    <b><h1>ECMAScript 6</h1></b> 
+    <h2>Die neuen ES6-Features seit Juni 2015</h2> 
+</section>
+
+<section data-transition ="convex">
+    <strong><h2>Neue Features</h2></strong> 
+        <li>Deklaration von Variablen und Konstanten</li>
+        <li>Einführung von Klassen, Konstruktoren und Collections</li>
+        <li>Arrow Functions und Promises</li>
+</section>
+
+                <section data-transition ="convex">
+    <strong><h2>Vorteile</h2></strong> 
+        <li>klare und knappe Struktur</li>
+        <li>bessere Lesbarkeit</li>
+        <li>kürzere Programmierung</li>
+    <p>
+    </p>
+    
+    <strong><h2>Nachteil</h2></strong> 
+        <li>einzelne Funktionen sind noch nicht in allen Browsern implementiert</li>
+    
+</section>
+          
+                
+<section>
+                <script src="js/highlight.pack.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script> 
+    
+    <strong><h2>Konstanten</h2></strong> 
+        <li>... sind unveränderbare Variablen</li>
+            <pre><code data-trim contenteditable>
+                    //PI als Konstante definieren.
+                    const PI = 3.14159265359;
+                    console.log(PI); 
+                    
+                    // nicht möglich PI zu überschreiben
+                    PI = 5;
+                    console.log(PI);
+            </code></pre>
+</section>          
+                
+<section>
+        <strong><h2>Block Scoping</h2></strong> 
+        <li>Wird eine Variable mit dem Schlüsselwort <i>"let"</i> definiert,<br>so ist die Variable nur in dem jeweiligen Bereich gültig.</li>
+            <pre><code data-trim contenteditable>
+                    function leti() {
+                    
+                    //i wird nur für diese for-Schleife definiert
+                    for (let i = 0; i < 3; i++) { 
+                    console.log(i);}
+                    console.log("Ende");
+                    
+                    // i ist hier nicht mehr definiert, da es sich
+                    //außerhalb des Schleifenblocks befindet.
+                    console.log(i);
+                    };                 
+                    
+            </code></pre>
+</section>    
+   
+<section>
+        <strong><h2>Klassen</h2></strong> 
+    <li>... werden nun ermöglicht.</li>
+    <li>Klassen werden großgeschrieben.</li>
+        <table><tr><td><pre><code data-trim contenteditable>//ECMAScript6:
+class Student {
+   constructor(matrikelNr, sname, suni) {
+     this.nummer = matrikelNr;
+     this.name = sname;
+     this.uni = suni;}
+                    
+get matrikelNr() {
+return this.nummer;}
+</code></pre></td><td><pre><code data-trim contenteditable>//JavaScript bisher:
+var Student = function() {
+   function Student(matrikelNr, sname, suni) {
+     this.nummer = matrikelNr;
+     this.name = sname;
+     this.uni = suni;}
+ 
+   Object.defineProperty(Student.prototype,"matrikelNr",{
+     get: function() {
+     return this.nummer;},
+   enumerable: true;
+   configurable: true;
+   };                              
+            </code></pre></td></tr></table> 
+</section>   
+    
+    <section><h2>Arrow Functions</h2>
+        <li>... ersetzen das "function"-Schlüsselwort.</li>
+    <li>..nutzen "=>" für eine kompakte Schreibweise.</li>
+    <pre><code data-trim contenteditable>//ECMAScript:
+        function gerade() {
+                 var numbers = [1,2,3,4,5,6,7,8,9];
+                 var gerade = numbers.filter(n => n % 2 === 0);
+                 console.log(gerade);
+        };
+
+//JavaScript bisher:
+        function gerade() {
+                 var numbers = [1,2,3,4,5,6,7,8,9];
+                 var gerade = numbers.filter(function(n){
+                 return n % 2 === 0;
+                 });
+        console.log(gerade);
+        };</code></pre></section>
+        
+        <section>
+    <b><h1>Vielen Dank</h1></b> 
+    <h2>Für Ihre Aufmerksamkeit</h2> 
+</section>
+
+ 
+        </div>
+    </div>
+           
+           <script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+           
+        <script>
+            Reveal.initialize({});
+        </script>
+
+</body>
+</html>
